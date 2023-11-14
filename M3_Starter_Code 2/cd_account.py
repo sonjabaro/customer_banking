@@ -13,29 +13,32 @@ from Account import Account
         float: The updated CD account balance after adding the interest earned.
         And returns the interest earned.
     """
+
 def create_cd_account(balance, interest_rate, months):
-        interest_rate = float(0)
-        interest_earned = float(balance * (interest_rate/100 * months/12))
-        months = int()
-        balance = float([200])
-        balance += interest_earned
-        print(f"The new balance is: {balance}")
-        return balance,interest_earned
-    # Create an instance of the `Account` class and pass in the balance and interest parameters.
-    #  Hint: You need to add the interest as a value, i.e, 0.
-    # ADD YOUR CODE HERE
+    interest_earned = float(balance * (interest_rate/100 * months/12))
+    balance += interest_earned
+    print(f"The new balance is: {balance}")
+    return balance, interest_earned
 
+# Create an instance of the `Account` class and pass in the balance and interest parameters.
+#  Hint: You need to add the interest as a value, i.e, 0.
+cd_account =Account(balance,interest)
+Interest= 0
+   
     # Calculate interest earned
-    # ADD YOUR CODE HERE
+Interest_earned = balance * (interest_rate/100 * months/12)
 
-    # Update the CD account balance by adding the interest earned
-    # ADD YOUR CODE HERE
 
-    # Pass the updated_balance to the set balance method using the instance of the CDAccount class.
-    # ADD YOUR CODE HERE
+# Update the savings account balance by adding the interest earned
+new_balance = balance + Interest_earned
 
-    # Pass the interest_earned to the set interest method using the instance of the CDAccount class.
-    # ADD YOUR CODE HERE
 
-    # Return the updated balance and interest earned.
-    return  # ADD YOUR CODE HERE
+# Pass the updated_balance to the set balance method using the instance of the SavingsAccount class.
+cd_account.set_balance(new_balance)
+
+
+# Pass the interest_earned to the set interest method using the instance of the SavingsAccount class.
+cd_account.set_interest(Interest_earned)
+
+# Return the updated balance and interest earned.
+return new_balance, Interest_earned
